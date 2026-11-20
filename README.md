@@ -176,6 +176,8 @@ backend is running. For local development, leave the value in `.env.example`
 
 ## Tests and production build
 
+GitHub Actions runs the same frontend tests, production build, and backend tests on every pull request and every push to `main`.
+
 Run the backend suite from an activated virtual environment:
 
 ```bash
