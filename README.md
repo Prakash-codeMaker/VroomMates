@@ -336,6 +336,11 @@ Local integration tests explicitly opt into the loopback Firestore emulator with
 python -B -m tests.run_tests
 ```
 
+**Continuous integration:** `.github/workflows/ci.yml` runs the frontend tests and
+production build on Node 24 and the safe backend test runner on Python 3.10 for
+every pull request and every push to `main`. These jobs use placeholder frontend
+configuration only and do not require repository secrets.
+
 For the selected-adapter suite, start an official Firestore emulator bound to `127.0.0.1:8187` with project `demo-vroommates`, then run:
 
 ```bash
