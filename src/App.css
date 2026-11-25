@@ -348,7 +348,6 @@ button:hover {
     font-size: 1.4rem;
   }
 
-
   input,
   select {
     padding: 10px 12px;
@@ -365,7 +364,6 @@ button:hover {
   select {
     width: 100%;
   }
-
 }
 
 /* Touch devices at any width. Landscape phones are wider than the breakpoint
