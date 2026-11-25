@@ -156,47 +156,13 @@ pre {
   letter-spacing: -0.01em;
 }
 
-.brand-subtitle {
-  margin: 0 0 20px;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-}
-
 /* ==========================================================================
    Panels
    ========================================================================== */
 
-.account-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-
 .account-greeting {
   margin: 0;
   font-size: 0.9rem;
-}
-
-.account-row .google-btn {
-  margin-top: 0;
-}
-
-.route-data-card {
-  margin-top: 16px;
-  padding: 12px 14px;
-  max-height: 260px;
-  background: #fafafa;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  text-align: left;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.route-data-card pre {
-  margin: 0;
-  font-size: 0.78rem;
 }
 
 /* ==========================================================================
@@ -249,17 +215,6 @@ input[type='number'] {
   width: 100%;
 }
 
-.error-message {
-  margin-top: 12px;
-  padding: 10px 12px;
-  color: var(--danger);
-  background: var(--danger-bg);
-  border: 1px solid var(--danger-border);
-  border-radius: var(--radius);
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-
 /* Google Places dropdown is appended to <body>, so it needs to clear the map */
 .pac-container {
   z-index: 2000;
@@ -294,28 +249,6 @@ button:hover {
   margin-top: 16px;
   padding: 12px 14px;
   font-size: 0.95rem;
-}
-
-.google-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 8px 14px;
-  color: var(--accent-dark);
-  background-color: var(--accent-light);
-  border: 1px solid var(--accent-light-hover);
-  border-radius: var(--radius);
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-.google-btn:hover {
-  background-color: var(--accent-light-hover);
-}
-
-.google-logout-btn {
-  color: var(--ink);
 }
 
 .custom-map-control-button {
@@ -415,9 +348,6 @@ button:hover {
     font-size: 1.4rem;
   }
 
-  .brand-subtitle {
-    margin-bottom: 14px;
-  }
 
   input,
   select {
@@ -428,9 +358,7 @@ button:hover {
     width: 72px;
   }
 
-  button,
-  .google-btn,
-  .account-row {
+  button {
     width: 100%;
   }
 
@@ -438,9 +366,6 @@ button:hover {
     width: 100%;
   }
 
-  .route-data-card {
-    max-height: 220px;
-  }
 }
 
 /* Touch devices at any width. Landscape phones are wider than the breakpoint
@@ -450,15 +375,13 @@ button:hover {
   input,
   select,
   button,
-  .google-btn,
   .submit-btn {
     font-size: 16px;
   }
 
   input,
   select,
-  button,
-  .google-btn {
+  button {
     min-height: var(--tap-target);
   }
 }
@@ -466,8 +389,6 @@ button:hover {
 .sidebar-header { flex: 0 0 auto; padding: 20px 22px 12px; }
 .brand-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; min-height: 44px; }
 .brand-row .brand-title { margin: 0; min-width: 0; }
-.brand-row + .brand-subtitle { margin-top: 2px; }
-.sidebar-header .brand-subtitle { margin-bottom: 0; }
 @media (max-width: 768px) { .sidebar-header { padding: 16px 16px 10px; } }
 
 /* Reserve usable form space when a stacked map is expanded or the viewport is short. */
@@ -476,8 +397,7 @@ button:hover {
 }
 @media (max-width: 768px) and (max-height: 600px) {
   .sidebar-header { padding-block: 8px; }
-  .sidebar-header .brand-subtitle { display: none; }
-}
+  }
 
 /* Browser surfaces carry the palette too. */
 :root { accent-color: var(--accent); }

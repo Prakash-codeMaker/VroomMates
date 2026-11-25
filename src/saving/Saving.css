@@ -5,7 +5,6 @@
 .planner-nav button[aria-selected='true'] { background: var(--accent-light); color: var(--accent-ink); }
 .planner-nav button:hover:not(:disabled) { background: var(--accent-wash-strong); color: var(--accent-ink); }
 .planner-nav button:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
-.planner-count { display: inline-block; margin-left: 5px; font-size: .72rem; color: inherit; }
 .planner-scroll { flex: 1 1 auto; min-height: 0; min-width: 0; overflow-y: auto; overflow-x: hidden; scrollbar-gutter: stable; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding: 16px 22px 32px; scroll-padding-block: 16px; }
 .planner-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .planner [hidden] { display: none !important; }
@@ -14,17 +13,17 @@
 .planner h3:first-child { margin-top: 0; }
 .planner-location { margin-bottom: 12px; min-width: 0; }
 .planner-location > input { width: 100%; box-sizing: border-box; }
-.saving-card, .saving-section { margin: 0; padding: 0; min-width: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.saving-card { margin: 0; padding: 0; min-width: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .saving-card[aria-label='Save route'] { margin-top: 16px; }
 .saving-card summary { cursor: pointer; color: var(--accent-text); font-weight: 650; padding: 4px 0; }
-.saving-card summary:focus-visible, .saving-card button:focus-visible, .saving-section button:focus-visible,
+.saving-card summary:focus-visible, .saving-card button:focus-visible,
 .location-saving button:focus-visible, .saving-card select:focus-visible, .location-saving select:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
 .saving-row, .saving-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .saving-row input, .saving-row select { flex: 1 1 140px; min-width: 0; }
 .saving-row > label { flex-basis: 100%; margin-bottom: 0; }
-.saving-card label, .saving-section label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: 6px; }
-.saving-card input, .saving-card select, .saving-section input, .saving-section select { width: 100%; box-sizing: border-box; }
-.saving-card button, .saving-section button, .location-saving button { margin: 0; width: auto; min-height: 40px; padding: 8px 12px; }
+.saving-card label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: 6px; }
+.saving-card input, .saving-card select { width: 100%; box-sizing: border-box; }
+.saving-card button, .location-saving button { margin: 0; width: auto; min-height: 40px; padding: 8px 12px; }
 .saving-note { color: var(--ink-soft); font-size: .83rem; line-height: 1.5; margin: 8px 0 0; }
 .saving-error { color: var(--danger-ink); background: var(--danger-wash); border: 1px solid var(--danger-border-soft); padding: 10px; border-radius: 6px; line-height: 1.5; font-size: .85rem; overflow-wrap: anywhere; }
 .saving-success { color: var(--success-ink); font-size: .85rem; line-height: 1.5; }
@@ -57,16 +56,10 @@ button:disabled { opacity: .55; cursor: not-allowed; }
 .address-field { flex: 1 1 auto; min-width: 0; width: 100%; }
 .address-input-wrap { position: relative; min-width: 0; }
 .address-input-wrap > input { display: block; margin: 0; width: 100%; height: 44px; box-sizing: border-box; }
-.address-input-wrap.has-saved-places > input { padding-right: 88px; }
-.address-saved-chooser { position: absolute; top: 1px; right: 1px; width: 80px; height: calc(100% - 2px); min-height: 0; border: 0; border-left: 1px solid var(--border); border-radius: 0 6px 6px 0; margin: 0; padding: 0 6px; background: var(--accent-wash); color: var(--accent-text); font-size: .78rem; }
 .location-manager-actions { margin-bottom: 16px; }
 .new-location-form { margin: 16px 0; padding: 16px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .new-location-form label { display: block; margin: 12px 0 6px; font-size: .85rem; font-weight: 600; }
 .new-location-form > input { width: 100%; box-sizing: border-box; }
-.trip-item-main { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-.trip-item-label { flex: 1 1 140px; min-width: 0; }
-.trip-item-actions { margin-left: auto; margin-top: 0; justify-content: flex-end; }
-.trip-item-actions > button { flex: 0 0 auto; }
 
 .driver-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 22px 0 12px; }
 .planner .driver-section-heading h3 { margin: 0; }
@@ -95,7 +88,6 @@ button:disabled { opacity: .55; cursor: not-allowed; }
 .planner-quantity-field { flex: 0 0 64px; display: flex; flex-direction: column; gap: 6px; margin: 0; color: var(--ink-soft); }
 .planner-quantity-field > span { font-size: .75rem; line-height: 1.25; font-weight: 600; }
 .planner .planner-quantity-field > input { width: 100%; height: 44px; min-height: 44px; margin: 0; padding: 8px; }
-.quantity-help { margin: -4px 0 14px; }
 
 .planner .passenger-input-group { align-items: flex-end; }
 
@@ -145,10 +137,6 @@ button:disabled { opacity: .55; cursor: not-allowed; }
 .location-item-address.is-missing { color: var(--warning-ink); }
 .location-item-actions { display: flex; align-items: center; gap: 2px; flex: 0 0 auto; }
 .location-delete-confirm { margin-top: 8px; }
-.location-edit-form { margin-top: 12px; padding: 14px; border: 1px solid var(--accent-border); border-radius: var(--radius); background: var(--accent-wash); }
-.location-edit-form label { display: block; margin: 0 0 6px; font-size: .78rem; font-weight: 600; color: var(--ink-soft); }
-.location-edit-form label:not(:first-child) { margin-top: 12px; }
-.location-edit-form > input { width: 100%; box-sizing: border-box; }
 
 .list-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .planner .list-heading h2 { margin: 0; }
